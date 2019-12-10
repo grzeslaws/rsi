@@ -35,7 +35,7 @@ import { HomeRoutingModule } from "./home-routing.module";
   imports: [
     BrowserModule,
     // HomeRoutingModule,
-    AppRoutingModule,
+    // AppRoutingModule,
     HttpClientModule
   ],
   providers: [],
