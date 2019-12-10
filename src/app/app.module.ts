@@ -15,6 +15,7 @@ import { PaginationComponent } from "./components/pagination/pagination.componen
 import { ObiektyComponent } from "./components/obiekty/obiekty.component";
 import { CechyComponent } from "./components/cechy/cechy.component";
 import { SpinnerComponent } from "./components/spinner/spinner.component";
+import { HomeRoutingModule } from "./home-routing.module";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,12 @@ import { SpinnerComponent } from "./components/spinner/spinner.component";
     CechyComponent,
     SpinnerComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HomeRoutingModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -9,25 +9,25 @@ import { ObiektyComponent } from "./components/obiekty/obiekty.component";
 import { CechyComponent } from "./components/cechy/cechy.component";
 
 const routes: Routes = [
-  { path: navigation.home, component: HomeComponent },
+  // { path: navigation.home, component: HomeComponent },
   {
     path: navigation.systemy,
     children: [
-      { path: "", pathMatch: "full", component: SystemyComponent },
+      { path: "", component: SystemyComponent },
       { path: ":id", component: SystemComponent }
     ]
   },
   {
     path: navigation.gestorzy,
     children: [
-      { path: "", pathMatch: "full", component: GestorzyComponent },
+      { path: "", component: GestorzyComponent },
       { path: ":id", component: GestorzyComponent }
     ]
   },
   {
     path: navigation.obiekty,
     children: [
-      { path: "", pathMatch: "full", component: ObiektyComponent },
+      { path: "", component: ObiektyComponent },
       { path: ":id", component: ObiektyComponent }
     ]
   },
