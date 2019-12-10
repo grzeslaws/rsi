@@ -1,0 +1,64 @@
+<ng-template [ngIf]="cechy" [ngIfElse]="loading">
+  <div class="o-form__wrapper-search">
+    <input
+      (input)="search($event)"
+      class="o-form__input o-form__input--big"
+      type="text"
+      placeholder="Znajdź ceche informacyjną"
+    />
+  </div>
+  <h1 class="o-headline__h1--border">Lista cech informacyjnych</h1>
+  <ul class="o-list--no-bullet" *ngIf="cechy">
+    <li *ngFor="let cecha of cechy.results">
+      <a [ngClass]="{'u-font-style--current': currentCecha === cecha.idCechy}" (click)="currentCecha = cecha.idCechy">{{ cecha.nazwaCechy }}</a>
+      <div
+        *ngIf="
+          currentCecha === cecha.idCechy &&
+          (cecha.obiekty.length || cecha.aktyprawne.length)
+        "
+        class="c-cechy__box"
+      >
+        <div *ngIf="cecha.obiekty.length" class="o-list__wrapper">
+          <div class="o-list__headline">Obiekty</div>
+          <ul class="o-list">
+            <li class="o-list__li" *ngFor="let obiekt of cecha.obiekty">
+              {{ obiekt.nazwaObiektu }}
+              <div
+                *ngIf="obiekt.systemy.length"
+                class="o-list__wrapper o-list__wrapper--sub"
+              >
+                <div class="o-list__headline">Systemy</div>
+                <ul class="o-list">
+                  <li class="o-list__li" *ngFor="let system of obiekt.systemy">
+                    <a
+                      [routerLink]="[
+                        '/' + navigation.systemy,
+                        system.idSystemu
+                      ]"
+                      >{{ system.nazwaSystemu }}</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="cecha.aktyprawne.length" class="o-list__wrapper">
+          <div class="o-list__headline">Akty prawne</div>
+          <ul class="o-list">
+            <li class="o-list__li" *ngFor="let aktPrawny of cecha.aktyprawne">
+              {{ aktPrawny }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <app-pagination
+    [count]="cechy.count"
+    (currentPageOutput)="currentPageMethod($event)"
+  ></app-pagination>
+</ng-template>
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>

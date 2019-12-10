@@ -1,0 +1,10 @@
+@mixin box {
+
+  &__box {
+    background-color: rgba($color-primary, 0.1);
+    padding: 15px;
+    margin-top: 10px;
+    border: 1px solid rgba($color-primary, 0.1);
+    border-radius: $border-radius-default;
+  }
+}

@@ -1,0 +1,6 @@
+@import "../../../assets/styles/1_settings/s-project";
+@import "../../../assets/styles/2_tools/t-box";
+
+.c-obiekty {
+  @include box;
+}

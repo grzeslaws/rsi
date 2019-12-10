@@ -1,0 +1,40 @@
+@mixin transaction {
+  &__transaction {
+    margin-bottom: $global-spacing;
+    margin-top: $global-spacing * 2;
+    padding-top: $global-spacing;
+    padding: $global-spacing;
+    background-color: rgba($color-gray-light, 0.2);
+    border-radius: $border-radius-default;
+    border: 1px solid rgba($color-gray-light, 0.5);
+  }
+
+  &__block_item-wrapper {
+    margin-bottom: $global-spacing;
+
+    &:last-child {
+      margin-bottom: unset;
+    }
+  }
+
+  &__label {
+    color: $color-gray;
+    margin-right: $global-spacing / 3;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-milli;
+  }
+
+  &__value {
+    overflow: hidden;
+    max-width: $global-spacing * 14;
+    text-overflow: ellipsis;
+    font-size: $font-size-base;
+    font-weight: $font-weight-light;
+    color: $color-black;
+
+    &--long {
+      max-width: unset;
+      word-break: break-all;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import "../../../assets/styles/1_settings/s-project";
+@import "../../../../node_modules/sass-mq/mq";
+
+.c-footer {
+  font-size: $font-size-base;
+  // position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+
+  &__bar {
+    background-color: $color-primary;
+    color: #fff;
+    min-height: $height-footer;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: $font-size-small;
+    text-align: center;
+  }
+
+  &__bar-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $height-footer;
+  }
+
+  &__layout {
+    display: flex;
+    justify-content: center;
+
+    @include mq($until: medium) {
+      flex-direction: column;
+      margin-right: unset;
+      margin-left: unset;
+      max-width: unset;
+    }
+  }
+
+  &__logo {
+    margin-right: 20px;
+
+    @include mq($until: medium) {
+      margin-bottom: 20px;
+    }
+
+    svg {
+      width: 34px;
+      height: 65px;
+    }
+  }
+
+  &__content {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    display: flex;
+    border-top: 1px solid $color-gray;
+  }
+
+  &__column {
+    margin-right: 45px;
+    display: flex;
+
+    @include mq($until: medium) {
+      margin-bottom: 20px;
+      flex-direction: column;
+    }
+  }
+
+  &__column-text {
+    display: flex;
+    flex-direction: column;
+  }
+}

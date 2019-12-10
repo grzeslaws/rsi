@@ -1,0 +1,140 @@
+@import "../../../assets/styles/1_settings/s-project";
+@import "../../../../node_modules/sass-mq/mq";
+
+.c-topbar {
+  background-color: $color-primary;
+  height: $height-topbar;
+  align-items: center;
+  display: flex;
+  color: #fff;
+
+  a {
+    transition: $transition-default;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__layout {
+    display: flex;
+
+    @include mq($until: large) {
+      width: 100%;
+    }
+  }
+
+  &__details {
+    margin-left: auto;
+    align-items: center;
+    display: flex;
+  }
+
+  &__detail {
+    margin-right: 10px;
+    align-items: center;
+    display: flex;
+    height: 100%;
+
+    &:after {
+      content: "";
+      display: block;
+      background-color: rgba(#fff, 0.5);
+      width: 1px;
+      height: 80%;
+      margin-left: 10px;
+    }
+
+    &:last-child {
+      margin-right: unset;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &--social,
+    &--logo {
+      @include mq($until: medium) {
+        display: none;
+      }
+    }
+  }
+
+  &__social-link {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: $top-bar-elements;
+    }
+
+    &:last-child {
+      margin-right: unset;
+    }
+  }
+
+  &__name {
+    text-decoration: none;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    color: inherit;
+    font-size: $font-size-base;
+  }
+
+  &__contrast {
+    margin-right: 5px;
+    height: $top-bar-elements;
+    width: $top-bar-elements;
+    background-color: #fff;
+    color: $color-black;
+    border-radius: 50px;
+    font-size: 7px;
+    font-weight: $font-weight-bold;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-black;
+
+    &:last-child {
+      margin-right: unset;
+    }
+
+    &--revers {
+      background-color: $color-black;
+      color: #fff;
+    }
+  }
+
+  &__change-font-size {
+    font-size: $font-size-small;
+    margin-right: 2px;
+    display: flex;
+    align-items: center;
+    color: inherit;
+
+    &--bigger {
+      font-size: $font-size-base;
+    }
+
+    &--biggest {
+      font-size: $font-size-h3;
+    }
+  }
+
+  &__kontakt {
+    font-size: $font-size-base - 1;
+    margin-right: 2px;
+    display: flex;
+    align-items: center;
+    color: inherit;
+
+    @include mq($until: medium) {
+      margin-right: unset;
+    }
+  }
+}

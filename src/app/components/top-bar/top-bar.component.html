@@ -1,0 +1,45 @@
+<div class="c-topbar">
+  <div class="o-layout c-topbar__layout">
+    <a class="c-topbar__name" [routerLink]="['/']">Repozytorium Standardów Informacyjnych</a>
+    <div class="c-topbar__details">
+      <a class="c-topbar__detail c-topbar__detail--logo" href="#"
+        ><img src="./assets/images/logo-gus-white.svg"
+      /></a>
+
+      <div class="c-topbar__detail c-topbar__detail--social">
+        <a class="c-topbar__social-link" target="_blank" href="https://twitter.com/GUS_STAT"
+          ><img src="./assets/images/t-icon.svg"
+        /></a>
+        <a class="c-topbar__social-link" target="_blank" href="https://www.facebook.com/GlownyUrzadStatystyczny/"
+          ><img src="./assets/images/f-icon.svg"
+        /></a>
+        <a class="c-topbar__social-link" target="_blank" href="https://www.linkedin.com/company/glownyurzadstatystyczny/"
+          ><img src="./assets/images/l-icon.svg"
+        /></a>
+        <a class="c-topbar__social-link" target="_blank" href="https://www.youtube.com/channel/UC0wiQMElFgYszpAoYgTnXtg/featured"
+          ><img src="./assets/images/yt-icon.svg"
+        /></a>
+      </div>
+      <div class="c-topbar__detail">
+        <a (click)="initialColors()" class="c-topbar__contrast">A</a>
+        <a (click)="reversColors()" class="c-topbar__contrast c-topbar__contrast--revers">A</a>
+      </div>
+      <div class="c-topbar__detail">
+        <a (click)="changeFontSize(14)" class="c-topbar__change-font-size">A</a>
+        <a
+          class="c-topbar__change-font-size c-topbar__change-font-size--bigger"
+          (click)="changeFontSize(16)"
+          >A</a
+        >
+        <a
+          class="c-topbar__change-font-size c-topbar__change-font-size--biggest"
+          (click)="changeFontSize(18)"
+          >A</a
+        >
+      </div>
+      <div class="c-topbar__detail">
+          <a class="c-topbar__kontakt" href=""><span class="o-icon o-icon--margin-right">local_phone</span>Kontakt</a>
+        </div>
+    </div>
+  </div>
+</div>

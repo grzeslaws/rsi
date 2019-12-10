@@ -1,0 +1,38 @@
+.o-list {
+
+  &__wrapper {
+    margin-bottom: 20px;
+
+    &--sub {
+      margin-bottom: 20px;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    &:last-child:not(&--sub) {
+      margin-bottom: unset;
+    }
+  }
+
+  [class*="__box"] & {
+    margin-left: 20px;
+  }
+
+  &__headline {
+    margin-bottom: 5px;
+    font-weight: $font-weight-bold;
+  }
+
+  &--no-bullet {
+    list-style: none;
+    margin-left: unset;
+  }
+
+  &__li {
+
+    &--less-margin,
+    [class*="__box"] & {
+      margin-bottom: 5px;
+    }
+  }
+}

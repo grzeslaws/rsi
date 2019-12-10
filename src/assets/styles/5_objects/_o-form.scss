@@ -1,0 +1,31 @@
+.o-form {
+
+  &__wrapper-search {
+    margin-bottom: 80px;
+  }
+  
+  &__input {
+    border: 1px solid var(--color-gray);
+    border-radius: $border-radius-default;
+    outline: 0;
+    padding: 5px;
+    transition: $transition-default;
+    color: var(--color-black);
+    background-color: var(--color-white);
+
+    &:focus {
+      border: 1px solid $color-primary;
+    }
+
+    &--big {
+      font-size: $font-size-h2;
+      padding: 15px;
+      width: 100%;
+      border-width: 2px;
+
+      &:focus {
+        border: 2px solid $color-primary;
+      }
+    }
+  }
+}

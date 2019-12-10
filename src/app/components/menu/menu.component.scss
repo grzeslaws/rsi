@@ -1,0 +1,244 @@
+@import "../../../assets/styles/1_settings/s-project";
+@import "../../../../node_modules/sass-mq/mq";
+
+.c-menu {
+  $c: &;
+
+  height: $height-menu;
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+
+    svg {
+      height: 40px;
+      width: 91px;
+    }
+  }
+
+  &__project-name {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    font-size: $font-size-h2;
+
+    &:before {
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: var(--color-black);
+      margin-right: 15px;
+      display: block;
+    }
+  }
+
+  &__wrapper {
+    margin-left: auto;
+    position: relative;
+    width: 100%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+
+    @include mq($until: large) {
+      text-align: right;
+    }
+  }
+
+  &__trigger {
+    width: 26px;
+    height: 26px;
+    box-shadow: inset 0 -2px 0 0 var(--color-black);
+    position: relative;
+    cursor: pointer;
+    transition: $transition-default;
+    position: absolute;
+    right: 0;
+    top: 28px;
+    display: none;
+
+    &:before,
+    &:after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-black);
+      content: "";
+      transform-origin: center center;
+      transition: $transition-default;
+    }
+
+    &:before {
+      top: 8px;
+    }
+
+    &:after {
+      top: 16px;
+    }
+
+    .mobile-menu & {
+      box-shadow: unset;
+
+      &:before {
+        transform: rotate(45deg);
+        top: 50%;
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+        top: 50%;
+      }
+    }
+
+    & ~ div {
+      @include mq($until: large) {
+        display: block;
+        transform: translateY(-100px);
+        transition: $transition-default;
+        background-color: $color-primary;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100vh;
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+
+        .mobile-menu & {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    @include mq($until: large) {
+      display: block;
+    }
+  }
+
+  &__ul {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+
+    @include mq($until: large) {
+      flex-direction: column;
+      position: fixed;
+      top: 160px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
+      color: #fff;
+      padding-top: 40px;
+      padding-left: 35px;
+      padding-right: 35px;
+      background-color: var(--color-white);
+      box-shadow: $shadow-default;
+      display: none;
+      z-index: 1;
+
+      .mobile-menu & {
+        display: flex;
+      }
+    }
+  }
+
+  &__li {
+    margin-right: 20px;
+    margin-bottom: unset;
+
+    position: relative;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+
+    #{$c}__ul-sub & {
+      margin-bottom: 10px;
+      min-height: 0;
+
+      &:last-child {
+        margin-bottom: unset;
+      }
+    }
+
+    @include mq($until: large) {
+      margin-right: unset;
+      margin-bottom: 20px;
+      min-height: unset;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    &:last-child {
+      margin-right: unset;
+    }
+  }
+
+  &__link {
+    color: var(--color-black);
+    text-decoration: none;
+    transition: $transition-default;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-bold;
+
+    #{$c}__ul-sub & {
+      font-weight: $font-weight-regular;
+      font-size: $font-size-base;
+    }
+
+    &:hover,
+    &--active {
+      color: $color-primary;
+    }
+
+    &--active {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__ul-sub {
+    list-style: none;
+    background-color: var(--color-gray-menu);
+    box-shadow: $shadow-small;
+    padding: 13px;
+    border-radius: $border-radius-default;
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition-default;
+    position: absolute;
+    top: 45px;
+    left: -40px;
+    width: 200px;
+    transform: translateY(20px);
+
+    #{$c}__li:hover & {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    @include mq($until: large) {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      position: unset;
+      background-color: transparent;
+      box-shadow: unset;
+      padding-right: unset;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}

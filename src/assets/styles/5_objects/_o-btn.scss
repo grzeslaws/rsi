@@ -1,0 +1,33 @@
+.o-btn {
+  padding: 10px 10px * 3/2;
+  border: unset;
+  outline: 0;
+  border-radius: $border-radius-default;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: $transition-default;
+  background-color: unset;
+  line-height: $line-height-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--primary {
+    color: #fff;
+    background-color: $color-primary;
+  }
+
+  &--primary-reverse {
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    background-color: #fff;
+  }
+
+  &--small {
+    font-size: $line-height-small;
+    padding: 10px * 1/2 10px * 12/10;
+  }
+}

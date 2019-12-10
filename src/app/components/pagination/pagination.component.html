@@ -1,0 +1,20 @@
+<div class="o-pagination">
+  <div (click)="navigationPage(false)" class="o-pagination__navigation">
+    <span class="o-icon">arrow_back</span> Poprzednia
+  </div>
+  <div class="o-pagination__wrapper-input">
+    <span class="o-pagination__label">Strona</span>
+    <input
+      class="o-form__input o-pagination__input"
+      type="number"
+      [value]="currentPage"
+      (input)="currentPageMethod($event)"
+      min="1"
+      [max]="numberOfPages(count)"
+    />
+    <span class="o-pagination__label">z {{ numberOfPages(count) }}</span>
+  </div>
+  <div (click)="navigationPage(true)" class="o-pagination__navigation">
+    Następna <span class="o-icon">arrow_forward</span>
+  </div>
+</div>

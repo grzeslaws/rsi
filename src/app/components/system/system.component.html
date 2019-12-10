@@ -1,0 +1,150 @@
+<ng-template [ngIf]="system$ | async" [ngIfElse]="loading"
+  ><div *ngIf="system$ | async as system" class="c-system">
+    <h1 class="o-headline__h1--border">{{ system.nazwaSystemu }}</h1>
+    <h2>Specyfikacja</h2>
+    <div class="c-system__wrapper-sections c-system__wrapper-sections--inline">
+      <div *ngIf="system.nazwaSystemuSkr" class="c-system__wrapper-section">
+        <div class="c-system__headline-section">Nazwa skrócona:</div>
+        {{ system.nazwaSystemuSkr }}
+      </div>
+      <div *ngIf="system.gestor" class="c-system__wrapper-section">
+        <div class="c-system__headline-section">Gestor:</div>
+        {{ system.gestor }}
+      </div>
+      <div
+        *ngIf="system.sposobProwadzeniaSystemu"
+        class="c-system__wrapper-section"
+      >
+        <div class="c-system__headline-section">Sposób prowadzenia:</div>
+        {{ system.sposobProwadzeniaSystemu }}
+      </div>
+      <div *ngIf="system.zasiegSystemu" class="c-system__wrapper-section">
+        <div class="c-system__headline-section">Zasięg:</div>
+        {{ system.zasiegSystemu }}
+      </div>
+    </div>
+    <div *ngIf="system.aktyprawne.length" class="c-system__wrapper-sections">
+      <div
+        class="c-system__headline-section c-system__headline-section--bigger-margin"
+      >
+        Podstawa prawna:
+      </div>
+      <div
+        *ngFor="let aktPrawny of system.aktyprawne"
+        class="c-system__section"
+      >
+        <ul>
+          <li class="o-list__li--less-margin">{{ aktPrawny.nazwa }}</li>
+          <li class="o-list__li--less-margin">
+            <span
+              *ngIf="aktPrawny.nazwa"
+              class="c-system__headline-section c-system__headline-section--inline"
+              >Miejsce publikacji:</span
+            >{{ aktPrawny.miejscePublikacji }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div *ngIf="system.celSystemu" class="c-system__wrapper-sections">
+      <div class="c-system__headline-section">Cel systemu:</div>
+      <div class="c-system__section">{{ system.celSystemu }}</div>
+    </div>
+    <div
+      *ngIf="system.zrodlaDanychCzestotliwoscAktualizacji"
+      class="c-system__wrapper-sections"
+    >
+      <div class="c-system__headline-section">
+        Źródła i częstotliwość aktualizacji:
+      </div>
+      <div class="c-system__section">
+        {{ system.zrodlaDanychCzestotliwoscAktualizacji }}
+      </div>
+    </div>
+    <div
+      *ngIf="system.terminFormyUdostepnianiaDanych"
+      class="c-system__wrapper-sections"
+    >
+      <div class="c-system__headline-section">
+        Terminy i formy udostępniania:
+      </div>
+      <div class="c-system__section">
+        {{ system.terminFormyUdostepnianiaDanych }}
+      </div>
+    </div>
+    <div
+      *ngIf="system.zmianyPlanowane"
+      class="c-system__wrapper-sections"
+    >
+      <div class="c-system__headline-section">
+        Zmiany planowane:
+      </div>
+      <div class="c-system__section">
+        {{ system.zmianyPlanowane }}
+      </div>
+    </div>
+    <div *ngIf="system.obiekty.length" class="c-system__wrapper-sections">
+      <div class="c-system__headline-section">
+        Obiekty opisywane w systemie:
+      </div>
+      <div
+        *ngFor="let obiekt of system.obiekty"
+        class="c-system__section c-system__section--tab"
+      >
+        <div class="c-system__section c-system__section--less-margin">
+          <span
+            class="c-system__headline-section c-system__headline-section--inline"
+            >Typ obiektu:</span
+          >{{ obiekt.typObiektu }}
+        </div>
+        <div class="c-system__section c-system__section--less-margin">
+          <span
+            class="c-system__headline-section c-system__headline-section--inline"
+            >Nazwa obiektu:</span
+          >{{ obiekt.nazwaObiektu }}
+        </div>
+        <div *ngIf="obiekt.opisObiektu" class="c-system__section c-system__section--less-margin">
+          <span
+            class="c-system__headline-section c-system__headline-section--inline"
+            >Opis obiektu:</span
+          >{{ obiekt.opisObiektu }}
+        </div>
+
+        <div class="c-system__section c-system__section--less-margin">
+          <div
+            *ngIf="obiekt && obiekt.cechyObiektu.length"
+            class="c-system__headline-section c-system__headline-section--bigger-margin"
+          >
+            Cechy informacyjne opisujące obiekt:
+          </div>
+
+          <div class="c-system__section" *ngFor="let c of obiekt.cechyObiektu">
+            <ul>
+              <li class="o-list__li--less-margin">
+                <a
+                  [ngClass]="{
+                    'u-font-style--current': checkCurrentDefinicjaCechy(
+                      c.idCechy,
+                      obiekt.idObiektu
+                    ),
+                    'o-link--unlinked': removeLinkClass(c.definicjaCechy)
+                  }"
+                  (click)="toggleDefinicjaCechy(c, obiekt.idObiektu)"
+                  >{{ c.nazwaCechy }}</a
+                >
+              </li>
+              <div
+                *ngIf="checkCurrentDefinicjaCechy(c.idCechy, obiekt.idObiektu)"
+                class="c-system__box"
+              >
+                <strong>Definicja:</strong> {{ c.definicjaCechy }}
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>

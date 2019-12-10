@@ -1,0 +1,43 @@
+@import "../../../assets/styles/1_settings/s-project";
+@import "../../../assets/styles/2_tools/t-box";
+
+.c-system {
+  @include box;
+
+  &__section {
+    margin-bottom: 20px;
+
+    &--tab {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    &--less-margin {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__wrapper-sections {
+    margin-bottom: 40px;
+
+    &--inline {
+      display: flex;
+    }
+  }
+
+  &__wrapper-section {
+    margin-right: 40px;
+  }
+
+  &__headline-section {
+    font-weight: $font-weight-bold;
+
+    &--bigger-margin {
+      margin-bottom: 10px;
+    }
+
+    &--inline {
+      margin-right: 5px;
+    }
+  }
+}

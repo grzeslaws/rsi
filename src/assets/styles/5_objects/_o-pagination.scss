@@ -1,0 +1,44 @@
+@import "../../../../node_modules/sass-mq/mq";
+
+.o-pagination {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+
+  &__wrapper-input {
+    display: flex;
+    align-items: center;
+
+    @include mq($until: medium) {
+      display: none;
+    }
+  }
+
+  &__navigation {
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: $transition-default;
+    display: flex;
+    align-items: center;
+
+    & > span {
+      margin-left: 5px;
+      margin-right: 5px;
+      position: relative;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__label {
+    margin-right: 10px;
+  }
+
+  &__input {
+    margin-right: 10px;
+  }
+}

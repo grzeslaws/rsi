@@ -1,0 +1,68 @@
+/*------------------------------------*\
+  #PROJECT VARIABLES
+\*------------------------------------*/
+
+// Colors
+$color-black: #333333;
+$color-error: #f7685b;
+$color-warning: #ffb946;
+$color-primary: #009aa6;
+$color-gray: #ededed;
+
+// Fonts
+$font-family-dafault: "Fira Sans", sans-serif;
+$font-family-icons: "Material Icons Outlined";
+
+$font-size-base: 14px;
+
+$font-size-h1: 24px;
+$font-size-h2: 18px;
+$font-size-h3: 16px;
+$font-size-h4: $font-size-base;
+
+$font-size-small: 11px;
+
+// Font weight
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+// Line heights
+$line-height-base: 1.4;
+$line-height-small: 19px;
+
+// Letter spacing
+$letter-spacing: 1px;
+$global-spacing: 10px;
+
+// Heights
+$height-topbar: 45px;
+$height-menu: 90px;
+$height-footer: 35px;
+$top-bar-elements: 12px;
+
+// Widths
+$max-width-page: 1000px;
+
+// Paths
+$path-images: "../images";
+$path-icons: "../icons";
+
+// Transitions
+$transition-duration: 300ms;
+$transition-default: all $transition-duration ease;
+
+// Border radius
+$border-radius-default: 4px;
+
+// Shadows
+$shadow-default: 0 0 50px rgba($color-black, 0.15);
+$shadow-small: 5px 5px 15px rgba($color-black, 0.06);
+
+// Breakpoints
+$mq-breakpoints: (
+  small: 320px,
+  medium: 740px,
+  large: 1024px,
+  xxl: 1280px,
+  fullHd: 1500px
+);

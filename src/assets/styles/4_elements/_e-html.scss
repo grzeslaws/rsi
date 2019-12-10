@@ -1,0 +1,63 @@
+html {
+  height: 100%;
+  color: var(--color-black);
+  font-family: $font-family-dafault;
+  font-weight: $font-weight-regular;
+  font-size: var(--font-size-base);
+  line-height: $line-height-base;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  background-color: var(--color-white);
+  overflow-x: hidden;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+app-footer {
+  margin-top: auto;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: $font-family-dafault;
+}
+
+input {
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 30px;
+
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

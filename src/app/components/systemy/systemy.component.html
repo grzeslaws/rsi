@@ -1,0 +1,26 @@
+<ng-template [ngIf]="systemy" [ngIfElse]="loading">
+  <div class="o-form__wrapper-search">
+    <input
+      (input)="search($event)"
+      class="o-form__input o-form__input--big"
+      type="text"
+      placeholder="Znajdź system informacyjny"
+    />
+  </div>
+  <h1 class="o-headline__h1--border">Lista systemów informacyjnych</h1>
+  <ul class="o-list--no-bullet">
+    <li *ngFor="let system of systemy.results">
+      <a [routerLink]="['/' + navigation.systemy, system.idSystemu]">{{
+        system.nazwaSystemu
+      }}</a>
+      <div class=""><span *ngIf="system.nazwaSystemuSkr">{{ system.nazwaSystemuSkr }},</span> {{ system.gestor }}</div>
+    </li>
+  </ul>
+  <app-pagination
+    [count]="systemy.count"
+    (currentPageOutput)="currentPageMethod($event)"
+  ></app-pagination>
+</ng-template>
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>

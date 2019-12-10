@@ -1,0 +1,55 @@
+<ng-template [ngIf]="obiekty" [ngIfElse]="loading">
+  <div class="o-form__wrapper-search">
+    <input
+      (input)="search($event)"
+      class="o-form__input o-form__input--big"
+      type="text"
+      placeholder="Znajdź obiekt"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+    />
+  </div>
+  <h1 class="o-headline__h1--border">Lista obiektów{{ term ? ': ' + term : '' }}</h1>
+  <ul class="o-list--no-bullet" *ngIf="obiekty">
+    <li *ngFor="let obiekt of obiekty.results">
+      <a [ngClass]="{'u-font-style--current': currentObiekt === obiekt.idObiektu}" (click)="currentObiekt = obiekt.idObiektu">{{
+        obiekt.nazwaObiektu
+      }}</a>
+      <div
+        *ngIf="
+          currentObiekt === obiekt.idObiektu &&
+          (obiekt.systemy.length || obiekt.cechyObiektu.length)
+        "
+        class="c-obiekty__box"
+      >
+        <div *ngIf="obiekt.systemy.length" class="o-list__wrapper">
+          <div class="o-list__headline">Systemy</div>
+          <ul class="o-list">
+            <li class="o-list__li" *ngFor="let system of obiekt.systemy">
+              <a [routerLink]="['/' + navigation.systemy, system.idSystemu]">{{
+                system.nazwaSystemu
+              }}</a>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="obiekt.cechyObiektu.length" class="o-list__wrapper">
+          <div class="o-list__headline">Cechy obiektu</div>
+          <ul class="o-list">
+            <li class="o-list__li" *ngFor="let cechy of obiekt.cechyObiektu">
+              <a [routerLink]="['/' + navigation.cechy, cechy.idCechy]">{{
+                cechy.nazwaCechy
+              }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <app-pagination
+    [count]="obiekty.count"
+    (currentPageOutput)="currentPageMethod($event)"
+  ></app-pagination>
+</ng-template>
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>
