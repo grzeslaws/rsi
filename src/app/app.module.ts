@@ -21,21 +21,21 @@ import { HomeRoutingModule } from "./home-routing.module";
   declarations: [
     AppComponent,
     // TopBarComponent,
-    MenuComponent,
-    FooterComponent,
+    // MenuComponent,
+    // FooterComponent,
     HomeComponent,
-    SystemyComponent,
-    SystemComponent,
-    GestorzyComponent,
-    PaginationComponent,
-    ObiektyComponent,
-    CechyComponent,
-    SpinnerComponent
+    // SystemyComponent,
+    // SystemComponent,
+    // GestorzyComponent,
+    // PaginationComponent,
+    // ObiektyComponent,
+    // CechyComponent,
+    // SpinnerComponent
   ],
   imports: [
     BrowserModule,
     // HomeRoutingModule,
-    // AppRoutingModule,
+    AppRoutingModule,
     HttpClientModule
   ],
   providers: [],
