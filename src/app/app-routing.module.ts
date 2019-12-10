@@ -9,7 +9,8 @@ import { ObiektyComponent } from "./components/obiekty/obiekty.component";
 import { CechyComponent } from "./components/cechy/cechy.component";
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", component: HomeComponent },
+  { path: "", redirectTo: navigation.home, pathMatch: "full" },
+  { path: navigation.home, pathMatch: "full", component: HomeComponent },
   {
     path: navigation.systemy,
     children: [

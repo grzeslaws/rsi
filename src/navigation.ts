@@ -1,4 +1,5 @@
 const navigation = {
+  home: "home",
   systemy: "systemy",
   gestorzy: "gestorzy",
   obiekty: "obiekty",
