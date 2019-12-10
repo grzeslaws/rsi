@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding, OnDestroy } from "@angular/core";
 import { ObiektyService } from "src/app/services/obiekty.service";
-import { SubSink } from "SubSink";
+import { SubSink } from "subsink";
 import { BehaviorSubject } from "rxjs";
 import { Obiekty } from "src/app/models/Obiekty";
 import navigation from "src/navigation";

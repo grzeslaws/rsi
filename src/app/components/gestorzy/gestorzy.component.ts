@@ -3,7 +3,7 @@ import { GestorzyService } from "src/app/services/gestorzy.service";
 import { BehaviorSubject } from "rxjs";
 import { Gestorzy } from "src/app/models/Gestorzy";
 import navigation from "src/navigation";
-import { SubSink } from "SubSink";
+import { SubSink } from "subsink";
 import { ParamMap, ActivatedRoute, Router } from "@angular/router";
 
 @Component({

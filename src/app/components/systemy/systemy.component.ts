@@ -3,7 +3,7 @@ import { SystemyService } from "src/app/services/systemy.service";
 import { Systemy } from "src/app/models/Systemy";
 import { BehaviorSubject } from "rxjs";
 import navigation from "src/navigation";
-import { SubSink } from "SubSink";
+import { SubSink } from "subsink";
 
 @Component({
   selector: "app-systemy",

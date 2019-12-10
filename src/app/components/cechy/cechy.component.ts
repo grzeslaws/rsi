@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding, OnDestroy } from "@angular/core";
 import { Cechy } from "src/app/models/Cechy";
 import { CechyService } from "src/app/services/cechy.service";
 import navigation from "src/navigation";
-import { SubSink } from "SubSink";
+import { SubSink } from "subsink";
 import { BehaviorSubject } from "rxjs";
 
 @Component({
