@@ -1,6 +1,6 @@
 <div class="o-layout c-menu">
   <div class="c-menu__wrapper">
-    <a [routerLink]="['/']" class="c-menu__logo" data-logo-gus>
+    <a routerLink="/" class="c-menu__logo" data-logo-gus>
       <svg
         width="154"
         height="68"
@@ -38,26 +38,26 @@
     <div data-trigger-menu class="c-menu__trigger"></div>
     <ul class="c-menu__ul">
       <li class="c-menu__li">
-        <a
+        <!-- <a
           class="c-menu__link"
           [routerLinkActive]="['c-menu__link--active']"
           [routerLink]="['/' + navigation.systemy]"
           >Systemy informacyjne</a
-        >
+        > -->
       </li>
       <li class="c-menu__li">
-        <a
+        <!-- <a
           class="c-menu__link"
           [routerLinkActive]="['c-menu__link--active']"
           [routerLink]="['/' + navigation.gestorzy]"
           >Gestorzy systemów
-        </a>
+        </a> -->
         <ul class="c-menu__ul-sub">
           <li
             class="c-menu__li"
             *ngFor="let key of objectKeys(subNavigationGestorzy)"
           >
-            <a
+            <!-- <a
               (click)="clearInput()"
               class="c-menu__link"
               [routerLinkActive]="['c-menu__link--active']"
@@ -65,23 +65,23 @@
                 '/' + navigation.gestorzy + '/' + subNavigationGestorzy[key]
               ]"
               >{{ subNavigationGestorzy[key] }}</a
-            >
+            > -->
           </li>
         </ul>
       </li>
       <li class="c-menu__li">
-        <a
+        <!-- <a
           class="c-menu__link"
           [routerLinkActive]="['c-menu__link--active']"
           [routerLink]="['/' + navigation.obiekty]"
           >Typy obiektów</a
-        >
+        > -->
         <ul class="c-menu__ul-sub">
           <li
             class="c-menu__li"
             *ngFor="let key of objectKeys(subNavigationTypyObiektow)"
           >
-            <a
+            <!-- <a
               (click)="clearInput()"
               class="c-menu__link"
               [routerLinkActive]="['c-menu__link--active']"
@@ -89,17 +89,17 @@
                 '/' + navigation.obiekty + '/' + subNavigationTypyObiektow[key]
               ]"
               >{{ subNavigationTypyObiektow[key] }}</a
-            >
+            > -->
           </li>
         </ul>
       </li>
       <li class="c-menu__li">
-        <a
+        <!-- <a
           class="c-menu__link"
           [routerLinkActive]="['c-menu__link--active']"
           [routerLink]="['/' + navigation.cechy]"
           >Cechy informacyjne</a
-        >
+        > -->
       </li>
     </ul>
   </div>

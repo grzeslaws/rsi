@@ -10,9 +10,9 @@
   <h1 class="o-headline__h1--border">Lista systemów informacyjnych</h1>
   <ul class="o-list--no-bullet">
     <li *ngFor="let system of systemy.results">
-      <a [routerLink]="['/' + navigation.systemy, system.idSystemu]">{{
+      <!-- <a [routerLink]="['/' + navigation.systemy, system.idSystemu]">{{
         system.nazwaSystemu
-      }}</a>
+      }}</a> -->
       <div class=""><span *ngIf="system.nazwaSystemuSkr">{{ system.nazwaSystemuSkr }},</span> {{ system.gestor }}</div>
     </li>
   </ul>

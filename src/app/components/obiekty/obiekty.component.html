@@ -26,9 +26,9 @@
           <div class="o-list__headline">Systemy</div>
           <ul class="o-list">
             <li class="o-list__li" *ngFor="let system of obiekt.systemy">
-              <a [routerLink]="['/' + navigation.systemy, system.idSystemu]">{{
+              <!-- <a [routerLink]="['/' + navigation.systemy, system.idSystemu]">{{
                 system.nazwaSystemu
-              }}</a>
+              }}</a> -->
             </li>
           </ul>
         </div>
@@ -36,9 +36,9 @@
           <div class="o-list__headline">Cechy obiektu</div>
           <ul class="o-list">
             <li class="o-list__li" *ngFor="let cechy of obiekt.cechyObiektu">
-              <a [routerLink]="['/' + navigation.cechy, cechy.idCechy]">{{
+              <!-- <a [routerLink]="['/' + navigation.cechy, cechy.idCechy]">{{
                 cechy.nazwaCechy
-              }}</a>
+              }}</a> -->
             </li>
           </ul>
         </div>
