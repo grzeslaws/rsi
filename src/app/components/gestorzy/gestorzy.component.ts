@@ -36,25 +36,25 @@ export class GestorzyComponent implements OnInit, OnDestroy {
   });
 
   ngOnInit() {
-    this.subs.add(
-      this.route.paramMap.subscribe(param => {
-        this.term = typeof param.get("id") === "object" ? "" : param.get("id");
+    // this.subs.add(
+    //   this.route.paramMap.subscribe(param => {
+    //     this.term = typeof param.get("id") === "object" ? "" : param.get("id");
 
-        this.searchStream.next({
-          term: this.term,
-          debounceArg: 0
-        });
-      })
-    );
+    //     this.searchStream.next({
+    //       term: this.term,
+    //       debounceArg: 0
+    //     });
+    //   })
+    // );
 
-    this.subs.add(
-      this.gestorzyService
-        .searchGestorzy(this.searchStream, this.currentPage as number)
-        .subscribe(
-          gestorzy => (this.gestorzy = gestorzy),
-          err => console.log(err)
-        )
-    );
+    // this.subs.add(
+    //   this.gestorzyService
+    //     .searchGestorzy(this.searchStream, this.currentPage as number)
+    //     .subscribe(
+    //       gestorzy => (this.gestorzy = gestorzy),
+    //       err => console.log(err)
+    //     )
+    // );
   }
 
   onFocus() {
