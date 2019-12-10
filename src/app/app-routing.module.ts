@@ -10,7 +10,6 @@ import { CechyComponent } from "./components/cechy/cechy.component";
 
 const routes: Routes = [
   { path: navigation.home, component: HomeComponent },
-
   {
     path: navigation.systemy,
     children: [
@@ -49,7 +48,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
