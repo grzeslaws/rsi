@@ -10,7 +10,7 @@ import { CechyComponent } from "./components/cechy/cechy.component";
 
 const routes: Routes = [
   { path: navigation.home, component: HomeComponent },
-  { path: "", redirectTo: "/" + navigation.home, pathMatch: "full" },
+
   {
     path: navigation.systemy,
     children: [
@@ -44,7 +44,8 @@ const routes: Routes = [
         component: CechyComponent
       }
     ]
-  }
+  },
+  { path: "", redirectTo: "/" + navigation.home, pathMatch: "full" }
 ];
 
 @NgModule({
