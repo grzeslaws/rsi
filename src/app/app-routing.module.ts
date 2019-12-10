@@ -9,42 +9,42 @@ import { ObiektyComponent } from "./components/obiekty/obiekty.component";
 import { CechyComponent } from "./components/cechy/cechy.component";
 
 const routes: Routes = [
-  // { path: navigation.home, component: HomeComponent },
-  {
-    path: navigation.systemy,
-    children: [
-      { path: "", component: SystemyComponent },
-      { path: ":id", component: SystemComponent }
-    ]
-  },
-  {
-    path: navigation.gestorzy,
-    children: [
-      { path: "", component: GestorzyComponent },
-      { path: ":id", component: GestorzyComponent }
-    ]
-  },
-  {
-    path: navigation.obiekty,
-    children: [
-      { path: "", component: ObiektyComponent },
-      { path: ":id", component: ObiektyComponent }
-    ]
-  },
-  {
-    path: navigation.cechy,
-    children: [
-      {
-        path: "",
-        component: CechyComponent
-      },
-      {
-        path: ":id",
-        component: CechyComponent
-      }
-    ]
-  },
-  { path: "", redirectTo: "/" + navigation.home, pathMatch: "full" }
+  { path: navigation.home, component: HomeComponent },
+  // {
+  //   path: navigation.systemy,
+  //   children: [
+  //     { path: "", component: SystemyComponent },
+  //     { path: ":id", component: SystemComponent }
+  //   ]
+  // },
+  // {
+  //   path: navigation.gestorzy,
+  //   children: [
+  //     { path: "", component: GestorzyComponent },
+  //     { path: ":id", component: GestorzyComponent }
+  //   ]
+  // },
+  // {
+  //   path: navigation.obiekty,
+  //   children: [
+  //     { path: "", component: ObiektyComponent },
+  //     { path: ":id", component: ObiektyComponent }
+  //   ]
+  // },
+  // {
+  //   path: navigation.cechy,
+  //   children: [
+  //     {
+  //       path: "",
+  //       component: CechyComponent
+  //     },
+  //     {
+  //       path: ":id",
+  //       component: CechyComponent
+  //     }
+  //   ]
+  // },
+  { path: "", redirectTo: "/home", pathMatch: "full" }
 ];
 
 @NgModule({
