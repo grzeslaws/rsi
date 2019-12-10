@@ -20,7 +20,7 @@ import { HomeRoutingModule } from "./home-routing.module";
 @NgModule({
   declarations: [
     AppComponent,
-    TopBarComponent,
+    // TopBarComponent,
     MenuComponent,
     FooterComponent,
     HomeComponent,
